@@ -61,11 +61,10 @@ p.lead {
   color: #fff !important;
   border-radius: 100%;
   text-align: center;
+  padding: 1rem 1rem;
   font-size: 3rem;
-  line-height: 5rem;
   margin-right: 1rem;
 }
-
 
 .social-icons a:last-child {
   margin-right: 0;
