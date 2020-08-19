@@ -52,7 +52,21 @@ function makeLandomList(number,array,destinationIndex,chanceNumber){
         }
     }
 }
+ function makeImage(){
+    //html2canvas実行
+    html2canvas(document.getElementById("capture"),{scrollY: -window.scrollY}).then(function(canvas) {
+        downloadImage(canvas.toDataURL("image/png"));
+    });
+ }
+ function downloadImage (data) {
+ var fname ="testimage.png";
+ //それ以外？
+ document.getElementById("getImage").href=data; //base64そのまま設定
+ document.getElementById("getImage").download=fname;
+ console.log(data);//ダウンロードファイル名設定
+ //document.getElementById("getImage").click(); //自動クリック
 
+ }
 makepulldownList("here");
 makepulldownList("destination");
 

@@ -57,3 +57,16 @@ body{
 .saikoro-list{
     height: 60px;
 }
+@media only screen and (max-width: 540px) {
+    .saikoro-text{
+        font-weight: 900;
+        font-size: large;
+        overflow-wrap: break-word!important;
+    /*text-align: right !important;*/
+    }
+    .saikoro-sub-text{
+        font-weight: 700;
+        overflow-wrap: break-word!important;
+        text-align: left !important;
+    }
+}
