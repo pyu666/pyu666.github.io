@@ -62,7 +62,7 @@ function makeImage() {
 }
 
 function downloadImage(data) {
-    var fname = "testimage.png";
+    const fname = document.getElementById("saikoro-title").innerText+".png";
     document.getElementById("getImage").href = data;
     document.getElementById("getImage").download = fname;
     console.log(data);
