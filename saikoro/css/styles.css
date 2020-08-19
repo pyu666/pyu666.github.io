@@ -8,7 +8,7 @@ body{
 .table-borderless {
     table-layout: auto;
     word-wrap: normal;
-    padding: 10px;
+    padding: 15px;
 }
 
 .color-bg-title{
@@ -47,7 +47,7 @@ body{
     font-weight: 900;
     font-size: x-large;
     overflow-wrap: break-word!important;
-    /*text-align: right !important;*/
+    text-align: right !important;
 }
 .saikoro-sub-text{
     font-weight: 700;
@@ -62,6 +62,7 @@ body{
         font-weight: 900;
         font-size: large;
         overflow-wrap: break-word!important;
+        text-align: right !important;
     /*text-align: right !important;*/
     }
     .saikoro-sub-text{

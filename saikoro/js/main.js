@@ -4,6 +4,7 @@ const airportList = ["新千歳", "利尻", "稚内", "紋別", "女満別", "�
 
 function changetxt(id, val) {
     document.getElementById(val).innerHTML = id.value;
+    makeTweetText();
 }
 
 function detectKouho() {
@@ -69,9 +70,22 @@ function downloadImage(data) {
     //document.getElementById("getImage").click(); //自動クリック
 
 }
+function makeTweetText(){
+    document.getElementById("makedtextarea").innerText="";
+    let texts = document.getElementById("saikoro-title").innerText;
+    texts+='\n';
+    for (var i = 1;i <= 6;i++) {
+        texts += i.toString() +". ";
+        texts += document.getElementById('deme' + i.toString()+'sub').innerText;
+        texts += " : "
+        texts += document.getElementById('deme' + i).innerText+"\n";
+    }
+    document.getElementById("makedtextarea").value=texts;
+}
 
 makepulldownList("here");
 makepulldownList("destination");
+makeTweetText();
 
 $(function () {
     $("#ikisakibtn").on('click', function () {
@@ -84,6 +98,7 @@ $(function () {
                 clearInterval(interval);
                 $.LoadingOverlay("hide");
                 detectKouho();
+                makeTweetText();
                 return;
             }
             count += 10;
