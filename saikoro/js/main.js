@@ -63,13 +63,23 @@ function makeImage() {
 
 function downloadImage(data) {
     var fname = "testimage.png";
-    //それ以外？
-    document.getElementById("getImage").href = data; //base64そのまま設定
+    document.getElementById("getImage").href = data;
     document.getElementById("getImage").download = fname;
-    console.log(data);//ダウンロードファイル名設定
-    //document.getElementById("getImage").click(); //自動クリック
+    console.log(data);
+    document.getElementById("getImage").click(); //自動クリック
 
 }
+function tweet() {
+    const tweetURL = "https://twitter.com/share\?";
+    const url = "url=https://pyu666.github.io/saikoro/&text=";
+    const text = document.getElementById("makedtextarea").value.replace(/\r?\n/g, '%0D%0A');
+    console.log(text);
+    document.getElementById("tweet").href = tweetURL +  url + text + "サイコロの旅ジェネレータで作成:";
+    // document.getElementById("tweet").text = text;
+    document.getElementById("tweet").click(); //自動クリック
+
+}
+
 function makeTweetText(){
     document.getElementById("makedtextarea").innerText="";
     let texts = document.getElementById("saikoro-title").innerText;

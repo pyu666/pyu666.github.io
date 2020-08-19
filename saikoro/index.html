@@ -154,10 +154,13 @@
   <label for="makedtextarea">テキスト版:</label>
   <textarea id="makedtextarea" class="form-control"></textarea>
 </div>
-    <a button class="btn btn-info" href="#" id="downloadImageButton" onclick="makeImage()" type="button">画像にして保存</a>
+    <a button class="btn btn-success" href="#" id="downloadImageButton" onclick="makeImage()" type="button">画像にして保存</a>
     <a download="image.png" href="" id="getImage" style="display:none;">画像保存</a></div>
+</div><br>
 </div>
-
+    <a button class="btn btn-info" href="#" id="tweetbtn" onclick="tweet()" type="button">内容をツイートする</a>
+    <a href="" id="tweet" style="display:none;"></a></div>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script crossorigin="anonymous" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -171,5 +174,6 @@
 <script src="https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
 <script src="js/main.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
