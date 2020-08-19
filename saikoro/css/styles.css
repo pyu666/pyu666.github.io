@@ -1,0 +1,59 @@
+body{
+    background: #efefef;
+    font-family: "Noto Sans JP";
+}
+.saikoro{
+    font-family: "Noto Sans JP Bold";
+}
+.table-borderless {
+    table-layout: auto;
+    word-wrap: normal;
+    padding: 10px;
+}
+
+.color-bg-title{
+    font-weight: 900;
+    font-size: large;
+    background-color: #fff9bb;
+    height: 70px;
+    text-align: center !important;
+
+}
+.list-group-item{
+    font-weight: 700;
+}
+.color-bg-red{
+    background-color: lightcoral;
+}
+.color-bg-orange{
+    background-color: orange;
+}
+.color-bg-viored{
+    background-color: violet;
+}
+.color-bg-yellow{
+    background-color: yellow;
+}
+.color-bg-blue{
+    background-color: skyblue;
+}
+.color-bg-green{
+    background-color: greenyellow;
+}
+.color-bg{
+    background-color: #ffc7c0;
+}
+.saikoro-text{
+    font-weight: 900;
+    font-size: x-large;
+    overflow-wrap: break-word!important;
+    /*text-align: right !important;*/
+}
+.saikoro-sub-text{
+    font-weight: 700;
+    overflow-wrap: break-word!important;
+    text-align: left !important;
+}
+.saikoro-list{
+    height: 60px;
+}
