@@ -44,6 +44,7 @@ function makeLandomList(number, array, destinationIndex, chanceNumber) {
     }
     for (var i = 0; i < number; i++) {
         document.getElementById('deme' + (i + 1)).innerHTML = randomArray[i];
+        document.getElementById('deme' + (i + 1)+'sub').innerHTML =  i + 1 +'の目が出たら？';
     }
     //チャンスタイム処理
     if (destinationIndex != -1) {
