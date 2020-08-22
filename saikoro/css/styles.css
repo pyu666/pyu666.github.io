@@ -68,7 +68,7 @@ body{
     .saikoro-sub-text{
         font-weight: 700;
         overflow-wrap: break-word!important;
-        text-align: left !important;
+        text-align: center !important;
     }
 }
 .form-group{
