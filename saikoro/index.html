@@ -20,9 +20,9 @@
     <div class="col-md-6 bg-light m-2 p-1 ">
         <div>
             <!-- 設定部分 -->
-            <div class="form-group row p-4 m-1">
-                <label class="col-lg-4" for="saikoroTitle">タイトル</label>
-                <input class="form-control col-lg-8" id="saikoroTitle" onchange='changetxt(this,"saikoro-title")'
+            <div class="form-group m-1 row">
+                <label class="col-md-4" for="saikoroTitle">タイトル：</label>
+                <input class="form-control  col-md-8" id="saikoroTitle" onchange='changetxt(this,"saikoro-title")'
                        placeholder="サイコロ１" type="text">
             </div>
             <div class="form-group row m-1 p-1">
@@ -46,11 +46,17 @@
                     </select>
                 </div>
             </div>
-            <div>
+<div class="form-group">
+    <div class="form-inline">目的地候補：
+      <label class="checkbox-inline"><input id = "isShuyouchi" type="checkbox"> 国内主要地　</label>
+      <label class ="checkbox-inline"><input id = "isAirport" type="checkbox">空港　</label>
+      <label class="checkbox-inline"><input id = "isShinkansen" type="checkbox">新幹線主要駅</label>
+    </div>
+  </div>
+            <div class="form-group">
                 <a button class="btn btn-danger" href="#" id="ikisakibtn" type="button">候補をランダムで決定</a>
-
             </div>
-            <div class="form-group m-1">
+            <div class="form-group">
                 <div class="form-group row ">
                     <label class=" col-form-label col-md-2" for="saikorosub1">1</label>
                     <input class="form-control col-md-5 mx-3" id="saikorosub1" onchange='changetxt(this,"deme1sub")'
@@ -93,7 +99,6 @@
                     <input class="form-control col-md-3 mx-3" id="saikoro6" onchange='changetxt(this,"deme6")'
                            placeholder="6の行き先" type="text">
                 </div>
-
             </div>
         </div>
         <!-- サイコロ部分 -->
@@ -150,16 +155,16 @@
 
 </div>
 <div>
-<div class="form-group col-sm-3">
-  <label for="makedtextarea">テキスト版:</label>
-  <textarea id="makedtextarea" class="form-control"></textarea>
-</div>
+    <div class="form-group col-sm-3 ">
+        <label for="makedtextarea">テキスト版:</label>
+        <textarea id="makedtextarea" class="form-control"></textarea>
+    </div>
     <a button class="btn btn-success" href="#" id="downloadImageButton" onclick="makeImage()" type="button">画像にして保存</a>
     <a download="image.png" href="" id="getImage" style="display:none;">画像保存</a></div>
 </div><br>
 </div>
-    <a button class="btn btn-info" href="#" id="tweetbtn" onclick="tweet()" type="button">内容をツイートする</a>
-    <a href="" id="tweet" style="display:none;"></a></div>
+<a button class="btn btn-info" href="#" id="tweetbtn" onclick="tweet()" type="button">内容をツイートする</a>
+<a href="" id="tweet" style="display:none;"></a></div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

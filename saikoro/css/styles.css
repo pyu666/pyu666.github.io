@@ -71,3 +71,7 @@ body{
         text-align: left !important;
     }
 }
+.form-group{
+    padding: 0!important;
+    margin: 0em!important;
+}
