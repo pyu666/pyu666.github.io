@@ -39,7 +39,8 @@
                     <div>
                         <a>　目的地に行ける可能性：</a>
                         <select id="chance" name="airport">
-                            <option value="0">ほぼ0</option>
+                            <option value="0">ゼロ</option>
+                            <option value="1">若干</option>
                             <option value="2">少し</option>
                             <option value="3">そこそこ</option>
                             <option value="5">ほぼ確実？</option>
@@ -159,7 +160,7 @@
                 <textarea class="form-control" id="makedtextarea"></textarea>
             </div>
             <div class="p-1">
-            <a button class="btn btn-success" href="#" id="downloadImageButton" onclick="makeImage()" type="button">画像にして保存</a>
+            <a button class="btn btn-secondary" href="#" id="downloadImageButton" onclick="makeImage()" type="button">画像にして保存</a>
             <a download="image.png" href="" id="getImage" style="display:none;">画像保存</a></div>
             <a button class="btn btn-info" href="#" id="tweetbtn" onclick="tweet()" type="button">内容をツイートする</a>
             <a href="" id="tweet" style="display:none;"></a></div>
