@@ -121,5 +121,5 @@ $(function () {
     $("#ikisakibtn").on('click', function () {
         detectKouho();
         makeTweetText();
-    });
+    };
 });
