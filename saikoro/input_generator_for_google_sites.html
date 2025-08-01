@@ -15,7 +15,7 @@
       table.table-borderless th, table.table-borderless td { border: none !important; }
       @media (max-width: 600px) {
         .card, .table-borderless { width: 100% !important; max-width: 100% !important; }
-        .form-control { font-size: 1em; }
+        .form-control { font-size: 0.9em; }
       }
     </style>
     <title>サイコロの旅 ジェネレータ</title>
@@ -25,19 +25,19 @@
         <h2 class="mb-4">サイコロの旅 ジェネレータ</h2>
         <form class="p-4 rounded shadow-sm bg-white" style="max-width:600px;margin:auto;">
             <div class="form-group row align-items-center mb-3">
-                <label class="col-sm-3 col-form-label text-right font-weight-bold" for="saikoroTitle">タイトル</label>
+                <label class="col-sm-3 col-form-label font-weight-bold" for="saikoroTitle">タイトル</label>
                 <div class="col-sm-9">
                     <input class="form-control" id="saikoroTitle" placeholder="サイコロの旅ジェネレーター" type="text" oninput="updateDisplay()" value="サイコロの旅ジェネレーター">
                 </div>
-                <label class="col-sm-3 col-form-label text-right font-weight-bold" for="bgColor">背景色</label>
+                <label class="col-sm-3 col-form-label font-weight-bold" for="bgColor">背景色</label>
                 <div class="col-sm-3">
                     <input type="color" id="bgColor" value="#ffc1c1" onchange="updateDisplay()" class="form-control form-control-color" style="width: 48px; height: 38px;">
                 </div>
-                <label class="col-sm-3 col-form-label text-right font-weight-bold" for="titleColor">タイトル色</label>
+                <label class="col-sm-3 col-form-label font-weight-bold" for="titleColor">タイトル色</label>
                 <div class="col-sm-3">
                     <input type="color" id="titleColor" value="#ffffc1" onchange="updateDisplay()" class="form-control form-control-color" style="width: 48px; height: 38px;">
                 </div>
-                <label class="col-sm-3 col-form-label text-right font-weight-bold" for="fontSelect">表示フォント</label>
+                <label class="col-sm-3 col-form-label font-weight-bold" for="fontSelect">表示フォント</label>
                 <div class="col-sm-9">
                     <select class="form-control" id="fontSelect" onchange="updateDisplay()">
                         <option value="Mochiy Pop P One, sans-serif">Mochiy Pop P One</option>
@@ -125,8 +125,8 @@
                 <tbody>
                 <tr style="background-color:#ff89c4; border-radius: 8px; overflow: hidden;">
                     <th style="border-radius: 8px 0 0 8px;"><img src="https://github.com/pyu666/pyu666.github.io/blob/master/saikoro/pic/1.png?raw=true" width="50" alt="1"></th>
-                    <td id="deme1sub" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0;">ラ・フォーレ</td>
-                    <td id="deme1" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0 8px 8px 0;">青森</td>
+                    <td id="deme1sub" style="width:350px; text-align:center; font-size:1.1em; border-radius: 0;">ラ・フォーレ</td>
+                    <td id="deme1" style="width:100px; text-align:center; font-size:1.1em; border-radius: 0 8px 8px 0;">青森</td>
                 </tr>
                 <tr style="background-color:#ffc489; border-radius: 8px; overflow: hidden;">
                     <th style="border-radius: 8px 0 0 8px;"><img src="https://github.com/pyu666/pyu666.github.io/blob/master/saikoro/pic/2.png?raw=true" width="50" alt="2"></th>
@@ -157,9 +157,9 @@
             </table>
         </div>
         <div class="mt-3 text-center">
-            <button class="btn btn-secondary" onclick="saveImage()" type="button">画像として保存</button>
             <button class="btn btn-info" onclick="tweetContent()" type="button">内容をXでポストする</button>
         </div>
+        <div class="mb-5"></div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
