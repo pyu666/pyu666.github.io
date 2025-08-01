@@ -2,10 +2,22 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Yusei+Magic&family=Kosugi+Maru&family=Zen+Kurenaido&family=Mochiy+Pop+P+One&display=swap">
+    <style>
+      body { background: #f8f9fa; }
+      .card { border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #fff; }
+      .color-bg-title { background: #f8d568 !important; color: #333; }
+      .form-control-color { padding: 0.2rem; }
+      .btn-secondary, .btn-info { min-width: 140px; margin: 0 0.5em; }
+      .list-group-item { border: none; }
+      table.table-borderless th, table.table-borderless td { border: none !important; }
+      @media (max-width: 600px) {
+        .card, .table-borderless { width: 100% !important; max-width: 100% !important; }
+        .form-control { font-size: 1em; }
+      }
+    </style>
     <title>サイコロの旅 ジェネレータ</title>
 </head>
 <body>
@@ -17,8 +29,6 @@
                 <div class="col-sm-9">
                     <input class="form-control" id="saikoroTitle" placeholder="サイコロの旅ジェネレーター" type="text" oninput="updateDisplay()" value="サイコロの旅ジェネレーター">
                 </div>
-            </div>
-            <div class="form-group row align-items-center mb-3">
                 <label class="col-sm-3 col-form-label text-right font-weight-bold" for="bgColor">背景色</label>
                 <div class="col-sm-3">
                     <input type="color" id="bgColor" value="#ffc1c1" onchange="updateDisplay()" class="form-control form-control-color" style="width: 48px; height: 38px;">
@@ -27,8 +37,6 @@
                 <div class="col-sm-3">
                     <input type="color" id="titleColor" value="#ffffc1" onchange="updateDisplay()" class="form-control form-control-color" style="width: 48px; height: 38px;">
                 </div>
-            </div>
-            <div class="form-group row align-items-center mb-3">
                 <label class="col-sm-3 col-form-label text-right font-weight-bold" for="fontSelect">表示フォント</label>
                 <div class="col-sm-9">
                     <select class="form-control" id="fontSelect" onchange="updateDisplay()">
@@ -103,47 +111,47 @@
         </form>
         <hr>
         <div class="color-bg m-2 py-3 pt-4 col-md-5 saikoro card text-center mx-auto" id="capture">
-            <ul class="list-group" style="max-width:600px;width:100%;margin:auto;">
+            <ul class="list-group" style="max-width:700px;width:100%;margin:auto;">
                 <li class="list-group-item color-bg-title" id="saikoro-title" style="font-weight:bold; font-size:1.3em; background-color:#f8d568;">サイコロの旅ジェネレーター</li>
             </ul>
-            <table class="table-borderless mx-auto" style="max-width:600px;width:100%;">
+            <table class="table-borderless mx-auto" style="max-width:700px;width:100%;">
                 <thead>
                 <tr>
                     <th style="width:60px;"></th>
-                    <th style="width:220px;"></th>
-                    <th style="width:220px;"></th>
+                    <th style="width:250px;"></th>
+                    <th style="width:250px;"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="color-bg-red saikoro-list">
-                    <th><img src="pic/1.png" width="50" alt="1"></th>
-                    <td class="saikoro-sub-text" id="deme1sub" style="width:220px;">ラ・フォーレ</td>
-                    <td class="saikoro-text" id="deme1" style="width:220px;">青森</td>
+                <tr style="background-color:#ff89c4; border-radius: 8px; overflow: hidden;">
+                    <th style="border-radius: 8px 0 0 8px;"><img src="https://github.com/pyu666/pyu666.github.io/blob/master/saikoro/pic/1.png?raw=true" width="50" alt="1"></th>
+                    <td id="deme1sub" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0;">ラ・フォーレ</td>
+                    <td id="deme1" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0 8px 8px 0;">青森</td>
                 </tr>
-                <tr class="color-bg-orange saikoro-list">
-                    <th><img src="pic/2.png" width="50" alt="2"></th>
-                    <td class="saikoro-sub-text" id="deme2sub" style="width:220px;">Weライナー</td>
-                    <td class="saikoro-text" id="deme2" style="width:220px;">新潟</td>
+                <tr style="background-color:#ffc489; border-radius: 8px; overflow: hidden;">
+                    <th style="border-radius: 8px 0 0 8px;"><img src="https://github.com/pyu666/pyu666.github.io/blob/master/saikoro/pic/2.png?raw=true" width="50" alt="2"></th>
+                    <td id="deme2sub" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0;">Weライナー</td>
+                    <td id="deme2" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0 8px 8px 0;">新潟</td>
                 </tr>
-                <tr class="color-bg-viored saikoro-list">
-                    <th><img src="pic/3.png" width="50" alt="3"></th>
-                    <td class="saikoro-sub-text" id="deme3sub" style="width:220px;">オレンジライナー</td>
-                    <td class="saikoro-text" id="deme3" style="width:220px;">愛媛</td>
+                <tr style="background-color:#c489ff; border-radius: 8px; overflow: hidden;">
+                    <th style="border-radius: 8px 0 0 8px;"><img src="https://github.com/pyu666/pyu666.github.io/blob/master/saikoro/pic/3.png?raw=true" width="50" alt="3"></th>
+                    <td id="deme3sub" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0;">オレンジライナー</td>
+                    <td id="deme3" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0 8px 8px 0;">愛媛</td>
                 </tr>
-                <tr class="color-bg-yellow saikoro-list">
-                    <th><img src="pic/4.png" width="50" alt="4"></th>
-                    <td class="saikoro-sub-text" id="deme4sub" style="width:220px;">らくちん</td>
-                    <td class="saikoro-text" id="deme4" style="width:220px;">盛岡</td>
+                <tr style="background-color:#ffff89; border-radius: 8px; overflow: hidden;">
+                    <th style="border-radius: 8px 0 0 8px;"><img src="https://github.com/pyu666/pyu666.github.io/blob/master/saikoro/pic/4.png?raw=true" width="50" alt="4"></th>
+                    <td id="deme4sub" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0;">らくちん</td>
+                    <td id="deme4" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0 8px 8px 0;">盛岡</td>
                 </tr>
-                <tr class="color-bg-blue saikoro-list">
-                    <th><img src="pic/5.png" width="50" alt="5"></th>
-                    <td class="saikoro-sub-text" id="deme5sub" style="width:220px;">ドリームふくふく</td>
-                    <td class="saikoro-text" id="deme5" style="width:220px;">下関</td>
+                <tr style="background-color:#89c4ff; border-radius: 8px; overflow: hidden;">
+                    <th style="border-radius: 8px 0 0 8px;"><img src="https://github.com/pyu666/pyu666.github.io/blob/master/saikoro/pic/5.png?raw=true" width="50" alt="5"></th>
+                    <td id="deme5sub" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0;">ドリームふくふく</td>
+                    <td id="deme5" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0 8px 8px 0;">下関</td>
                 </tr>
-                <tr class="color-bg-green saikoro-list">
-                    <th><img src="pic/6.png" width="50" alt="6"></th>
-                    <td class="saikoro-sub-text" id="deme6sub" style="width:220px;">エアポートリムジン</td>
-                    <td class="saikoro-text" id="deme6" style="width:220px;">羽田</td>
+                <tr style="background-color:#d1ffc1; border-radius: 8px; overflow: hidden;">
+                    <th style="border-radius: 8px 0 0 8px;"><img src="https://github.com/pyu666/pyu666.github.io/blob/master/saikoro/pic/6.png?raw=true" width="50" alt="6"></th>
+                    <td id="deme6sub" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0;">エアポートリムジン</td>
+                    <td id="deme6" style="width:250px; text-align:center; font-size:1.1em; border-radius: 0 8px 8px 0;">羽田</td>
                 </tr>
                 </tbody>
             </table>
@@ -157,36 +165,36 @@
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
 <script>
 function updateDisplay() {
-    const title = document.getElementById('saikoroTitle').value || 'サイコロの旅ジェネレーター';
-    document.getElementById('saikoro-title').textContent = title;
-    document.getElementById('saikoro-title').style.backgroundColor = document.getElementById('titleColor').value;
-    document.getElementById('capture').style.backgroundColor = document.getElementById('bgColor').value;
-    document.getElementById('capture').style.fontFamily = document.getElementById('fontSelect').value;
-    for(let i=1;i<=6;i++){
-        document.getElementById('deme'+i+'sub').textContent = document.getElementById('saikorosub'+i).value;
-        document.getElementById('deme'+i).textContent = document.getElementById('saikoro'+i).value;
-    }
+  const $ = id => document.getElementById(id);
+  $('saikoro-title').textContent = $('saikoroTitle').value || 'サイコロの旅ジェネレーター';
+  $('saikoro-title').style.backgroundColor = $('titleColor').value;
+  $('capture').style.backgroundColor = $('bgColor').value;
+  $('capture').style.fontFamily = $('fontSelect').value;
+  for(let i=1;i<=6;i++){
+    $('deme'+i+'sub').textContent = $('saikorosub'+i).value;
+    $('deme'+i).textContent = $('saikoro'+i).value;
+  }
 }
 window.onload = updateDisplay;
 function saveImage() {
-    html2canvas(document.getElementById('capture')).then(function(canvas) {
-        const dataUrl = canvas.toDataURL('image/png');
-        const link = document.createElement('a');
-        link.href = dataUrl;
-        link.download = 'saikoro.png';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
+  html2canvas(document.getElementById('capture')).then(canvas => {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    const now = new Date();
+    link.download = `saikoro_${now.getFullYear()}${('0'+(now.getMonth()+1)).slice(-2)}${('0'+now.getDate()).slice(-2)}_${('0'+now.getHours()).slice(-2)}${('0'+now.getMinutes()).slice(-2)}${('0'+now.getSeconds()).slice(-2)}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
 }
 function tweetContent() {
-    let text = '【' + (document.getElementById('saikoroTitle').value || 'サイコロの旅ジェネレーター') + '】\n';
-    for(let i=1;i<=6;i++){
-        text += i + ': ' + document.getElementById('saikorosub'+i).value + ' → ' + document.getElementById('saikoro'+i).value + '\n';
-    }
-    text += '\nサイコロの旅ジェネレータで作成: https://pyu666.github.io/saikoro/';
-    const url = 'https://x.com/intent/tweet?text=' + encodeURIComponent(text);
-    window.open(url, '_blank');
+  const $ = id => document.getElementById(id);
+  let text = `【${$('saikoroTitle').value || 'サイコロの旅ジェネレーター'}】\n`;
+  for(let i=1;i<=6;i++){
+    text += `${i}: ${$('saikorosub'+i).value} → ${$('saikoro'+i).value}\n`;
+  }
+  text += '\nサイコロの旅ジェネレータで作成: https://pyu666.github.io/saikoro/';
+  window.open('https://x.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
 </script>
 </html>
