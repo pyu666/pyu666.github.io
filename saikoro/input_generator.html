@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Yusei+Magic:wght@400;700&family=Kosugi+Maru&family=Zen+Kurenaido&family=Mochiy+Pop+P+One&display=swap"
+          rel="stylesheet">
+    <title>サイコロの旅 ジェネレータ</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">>サイコロの旅 ジェネレータ</h2>
+        <form class="p-4 rounded shadow-sm bg-white" style="max-width:600px;margin:auto;">
+            <div class="form-group row align-items-center mb-3">
+                <label class="col-sm-3 col-form-label text-right font-weight-bold" for="saikoroTitle">タイトル</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="saikoroTitle" placeholder="サイコロの旅ジェネレーター" type="text" oninput="updateDisplay()" value="サイコロの旅ジェネレーター">
+                </div>
+            </div>
+            <div class="form-group row align-items-center mb-3">
+                <label class="col-sm-3 col-form-label text-right font-weight-bold" for="bgColor">背景色</label>
+                <div class="col-sm-3">
+                    <input type="color" id="bgColor" value="#ffc1c1" onchange="updateDisplay()" class="form-control form-control-color" style="width: 48px; height: 38px;">
+                </div>
+                <label class="col-sm-3 col-form-label text-right font-weight-bold" for="titleColor">タイトル色</label>
+                <div class="col-sm-3">
+                    <input type="color" id="titleColor" value="#ffffc1" onchange="updateDisplay()" class="form-control form-control-color" style="width: 48px; height: 38px;">
+                </div>
+            </div>
+            <div class="form-group row align-items-center mb-3">
+                <label class="col-sm-3 col-form-label text-right font-weight-bold" for="fontSelect">表示フォント</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="fontSelect" onchange="updateDisplay()">
+                        <option value="Mochiy Pop P One, sans-serif">Montserrat</option>
+                        <option value="Noto Sans JP, sans-serif">Noto Sans JP</option>
+                        <option value="Yusei Magic, sans-serif">Yusei+Magic</option>
+                        <option value="Kosugi Maru, sans-serif">Kosugi Maru</option>
+                        <option value="Zen Kurenaido, sans-serif">Zen Kurenaido</option>
+                        <option value="sans-serif">Sans-serif</option>
+                    </select>
+                </div>
+            </div>
+            <h5 class="mt-4 mb-3">サイコロの目と行き先</h5>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-row mb-2">
+                        <label class="col-1 col-form-label text-right font-weight-bold" for="saikorosub1">1</label>
+                        <div class="col-5">
+                            <input class="form-control" id="saikorosub1" placeholder="1の目が出たら？" type="text" oninput="updateDisplay()" value="ラ・フォーレ">
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" id="saikoro1" placeholder="1の行き先" type="text" oninput="updateDisplay()" value="青森">
+                        </div>
+                    </div>
+                    <div class="form-row mb-2">
+                        <label class="col-1 col-form-label text-right font-weight-bold" for="saikorosub2">2</label>
+                        <div class="col-5">
+                            <input class="form-control" id="saikorosub2" placeholder="2の目が出たら？" type="text" oninput="updateDisplay()" value="Weライナー">
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" id="saikoro2" placeholder="2の行き先" type="text" oninput="updateDisplay()" value="新潟">
+                        </div>
+                    </div>
+                    <div class="form-row mb-2">
+                        <label class="col-1 col-form-label text-right font-weight-bold" for="saikorosub3">3</label>
+                        <div class="col-5">
+                            <input class="form-control" id="saikorosub3" placeholder="3の目が出たら？" type="text" oninput="updateDisplay()" value="オレンジライナー">
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" id="saikoro3" placeholder="3の行き先" type="text" oninput="updateDisplay()" value="愛媛">
+                        </div>
+                    </div>
+                    <div class="form-row mb-2">
+                        <label class="col-1 col-form-label text-right font-weight-bold" for="saikorosub4">4</label>
+                        <div class="col-5">
+                            <input class="form-control" id="saikorosub4" placeholder="4の目が出たら？" type="text" oninput="updateDisplay()" value="らくちん">
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" id="saikoro4" placeholder="4の行き先" type="text" oninput="updateDisplay()" value="盛岡">
+                        </div>
+                    </div>
+                    <div class="form-row mb-2">
+                        <label class="col-1 col-form-label text-right font-weight-bold" for="saikorosub5">5</label>
+                        <div class="col-5">
+                            <input class="form-control" id="saikorosub5" placeholder="5の目が出たら？" type="text" oninput="updateDisplay()" value="ドリームふくふく">
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" id="saikoro5" placeholder="5の行き先" type="text" oninput="updateDisplay()" value="下関">
+                        </div>
+                    </div>
+                    <div class="form-row mb-2">
+                        <label class="col-1 col-form-label text-right font-weight-bold" for="saikorosub6">6</label>
+                        <div class="col-5">
+                            <input class="form-control" id="saikorosub6" placeholder="6の目が出たら？" type="text" oninput="updateDisplay()" value="エアポートリムジン">
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" id="saikoro6" placeholder="6の行き先" type="text" oninput="updateDisplay()" value="羽田">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <div class=" color-bg m-2 py-3 pt-4 col-md-5 saikoro card text-center mx-auto" id="capture">
+            <ul class="list-group" style="max-width:600px;width:100%;margin:auto;">
+                <li class="list-group-item color-bg-title" id="saikoro-title" style="font-weight:bold; font-size:1.3em; background-color:#f8d568;">サイコロの旅ジェネレーター</li>
+            </ul>
+            <table class="table-borderless mx-auto" style="max-width:600px;width:100%;">
+                <thead>
+                <tr>
+                    <th style="width:60px;"></th>
+                    <th style="width:220px;">内容</th>
+                    <th style="width:220px;">行き先</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="color-bg-red saikoro-list">
+                    <th><img src="pic/1.png" width="50px"></th>
+                    <td class="saikoro-sub-text" id="deme1sub" style="width:220px;">ラ・フォーレ</td>
+                    <td class="saikoro-text" id="deme1" style="width:220px;">青森</td>
+                </tr>
+                <tr class=" color-bg-orange m-2 saikoro-list">
+                    <th><img src="pic/2.png" width="50px"></th>
+                    <td class="saikoro-sub-text" id="deme2sub" style="width:220px;">Weライナー</td>
+                    <td class="saikoro-text" id="deme2" style="width:220px;">新潟</td>
+                </tr>
+                <tr class=" color-bg-viored m-2 saikoro-list">
+                    <th><img src="pic/3.png" width="50px"></th>
+                    <td class="saikoro-sub-text" id="deme3sub" style="width:220px;">オレンジライナー</td>
+                    <td class="saikoro-text" id="deme3" style="width:220px;">愛媛</td>
+                </tr>
+                <tr class=" color-bg-yellow saikoro-list">
+                    <th><img src="pic/4.png" width="50px"></th>
+                    <td class="saikoro-sub-text" id="deme4sub" style="width:220px;">らくちん</td>
+                    <td class="saikoro-text" id="deme4" style="width:220px;">盛岡</td>
+                </tr>
+                <tr class=" color-bg-blue saikoro-list">
+                    <th><img src="pic/5.png" width="50px"></th>
+                    <td class="saikoro-sub-text" id="deme5sub" style="width:220px;">ドリームふくふく</td>
+                    <td class="saikoro-text" id="deme5" style="width:220px;">下関</td>
+                </tr>
+                <tr class=" color-bg-green saikoro-list">
+                    <th><img src="pic/6.png" width="50px"></th>
+                    <td class="saikoro-sub-text" id="deme6sub" style="width:220px;">エアポートリムジン</td>
+                    <td class="saikoro-text" id="deme6" style="width:220px;">羽田</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-3 text-center">
+            <button class="btn btn-secondary" onclick="saveImage()" type="button">画像として保存</button>
+            <a id="downloadLink" style="display:none;" download="saikoro.png">画像ダウンロード</a>
+            <button class="btn btn-info" onclick="tweetContent()" type="button">内容をXでポストする</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+<script>
+
+function updateDisplay() {
+    // タイトル
+    const title = document.getElementById('saikoroTitle').value || 'サイコロの旅ジェネレーター';
+    document.getElementById('saikoro-title').textContent = title;
+    // タイトル色
+    const titleColor = document.getElementById('titleColor').value;
+    document.getElementById('saikoro-title').style.backgroundColor = titleColor;
+    // 背景色
+    const bgColor = document.getElementById('bgColor').value;
+    document.getElementById('capture').style.backgroundColor = bgColor;
+    // フォント
+    const font = document.getElementById('fontSelect').value;
+    document.getElementById('capture').style.fontFamily = font;
+    // サイコロ目
+    for(let i=1;i<=6;i++){
+        document.getElementById('deme'+i+'sub').textContent = document.getElementById('saikorosub'+i).value;
+        document.getElementById('deme'+i).textContent = document.getElementById('saikoro'+i).value;
+    }
+}
+window.onload = function() {
+  updateDisplay();
+};
+
+function saveImage() {
+    html2canvas(document.getElementById('capture')).then(function(canvas) {
+        // PCでも確実にダウンロードできるようにa要素を新規作成してクリック
+        const dataUrl = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'saikoro.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+}
+
+function tweetContent() {
+    let text = '';
+    text += '【' + (document.getElementById('saikoroTitle').value || 'サイコロの旅ジェネレーター') + '】\n';
+    for(let i=1;i<=6;i++){
+        text += i + ': ' + document.getElementById('saikorosub'+i).value + ' → ' + document.getElementById('saikoro'+i).value + '\n';
+    }
+    text += '\n' + 'サイコロの旅ジェネレータで作成: https://pyu666.github.io/saikoro/';
+    const url = 'https://x.com/intent/tweet?text=' + encodeURIComponent(text);
+    window.open(url, '_blank');
+}
+</script>
+</html>
